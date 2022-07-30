@@ -1,5 +1,7 @@
 package com.hernan.libreria.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.List;
 

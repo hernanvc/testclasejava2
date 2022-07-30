@@ -1,5 +1,7 @@
 package com.hernan.libreria.model;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+
 import javax.persistence.*;
 import java.util.Date;
 import java.util.List;
@@ -21,14 +23,17 @@ public class Libro {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "categoriaid")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     Categoria categoria;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name= "autorid")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private Autor autor;
 
 
     @OneToMany(mappedBy = "libro")
+    @JsonProperty(access = JsonProperty.Access.WRITE_ONLY)
     private List<Copia> copia;
 
 
