@@ -2,11 +2,13 @@ import React , {useEffect, useState} from "react";
 import axios from 'axios'
 import {Input , Col , Row , Button} from 'antd'
 import 'antd/dist/antd.min.css';
+import { useNavigate } from "react-router-dom"
 
 
 export default function Login (){
     const [user , setUser] = useState('')
     const [password , setPassword] = useState('')
+    const navigate = useNavigate();
     useEffect(()=>{
        
     },[])
@@ -24,10 +26,13 @@ export default function Login (){
         }, {headers : headers}).then(res =>{
             console.log(res);
             localStorage.setItem('token',res.data.token)
+            navigate('/');
+
         })
     }
     return(
         <>
+        
             <Row>
                 <Col span={12}>
                     <Input placeholder="Usuario"

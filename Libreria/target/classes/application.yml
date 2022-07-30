@@ -9,12 +9,8 @@ spring:
       INDENT_OUTPUT: true
   datasource:
     ## H2
-    #url: jdbc:h2:mem:mydb
-    
-    url: jdbc:postgresql://localhost:5432/testjava
-    username: postgres
-    password: postgres
-    driver-class-name: org.postgresql.Driver
+    url: jdbc:h2:mem:mydb
+
     
   h2:
     console:
@@ -24,14 +20,14 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: update
+      ddl-auto: create
      
 
 
 jwt:
   header: Authorization
   secret: tasksSecret
-  expiration: 604800
+  expiration: 6048003242423
   route:
     authentication:
       path: auth
